@@ -9,13 +9,24 @@ mermaid: true
 
 ---
 
-## 01. Dictionary
+## 01. Dictionary 
 
-C#의 Dictionary 는 C++의 `Map`과 비슷한 구조를 가지고 있다. 
-
-`KeyValuePair` 방식으로 `Key` 값을 이용해 `Value`를 가져오는 방식은 같다.
+`KeyValuePair` 방식으로 `Key` 값을 이용해 `Value`를 가져오는 방식이다.
 
 내부는 `HashTable` 구조로 구현되며 값을 검색하면 O(1)의 시간 복잡도로 검색 작업이 된다.
+
+주어진 키를 `HashCode`(정수)로 바꾸고, 이를 적당한 알고리즘을 통해 `HashKey`로 바꾼다. 
+
+Dictionary는 충돌을 해결하기 위해 `Chaining`(각 HashTable bucket에 항목 목록을 유지함)에 의존한다.
+
+Dictionary는 HashTable과는 다르게 자료형이 선언되어 있어 `boxing` 문제가 없다. 다만 자료형이 선언 되어 있는 문제때문에 모든 타입을 담을 수 없다.
+
+단점
+---
+- 항목이 저장되는 순서가 항목을 추가하는 순서와는 다름.
+- 정렬되지 않음. 정렬을 원하면 SortedDictionary(RB Tree)를 사용.
+
+
 
 
 주의사항
